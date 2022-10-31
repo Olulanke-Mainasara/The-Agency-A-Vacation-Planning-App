@@ -46,40 +46,40 @@
 
         <header id="slider">
             <ul id="slideWrap">
-                <li class="slider-page">
-                    <div class="theshadow">
-                        <section id="header-text">
-                            <h1>A world class experience is<br> just one click away</h1>
-                            <br>
-                            <br>
-                            <a href="book.html">Get started <i class="fa-solid fa-chevron-right"></i></a>
-                        </section>
-                    </div>
-                </li>
-    
-                <li class="slider-page">
-                    <div class="theshadow">
-                        <section id="header-text">
-                            <h1>A world class experience is<br> just one click away</h1>
-                            <br>
-                            <a href="book.html">Get started <i class="fa-solid fa-chevron-right"></i></a>
-                        </section>
-                    </div>
-                </li>
-    
-                <li class="slider-page">
-                    <div class="theshadow">
-                        <section id="header-text">
-                            <h1>A world class experience is<br> just one click away</h1>
-                            <br>
-                            <a href="book.html">Get started <i class="fa-solid fa-chevron-right"></i></a>
-                        </section>
-                    </div>
-                </li>
+                <li class="slider-page"><img src="Images/Activities/activity_1.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_2.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_3.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_4.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_5.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_6.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_7.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_8.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_9.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_10.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_11.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_12.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_13.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_14.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_15.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_16.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_17.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_18.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_19.webp" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_20.jpg" alt=""></li>
+                <li class="slider-page"><img src="Images/Activities/activity_21.jpg" alt=""></li>
             </ul>
 
-            <a id="prev" href="#" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></a>
-            <a id="next" href="#" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></a>
+            <div class="theshadow">
+                <section id="header-text">
+                    <h1>A world class experience is<br> just one click away</h1>
+                    <br>
+                    <br>
+                    <a href="book.html">Get started <i class="fa-solid fa-chevron-right"></i></a>
+                </section>
+            </div>
+
+            <a id="prev" href="#"><i class="fa-solid fa-chevron-left"></i></a>
+            <a id="next" href="#"><i class="fa-solid fa-chevron-right"></i></a>
 
             <div class="overlay">
                 <div class="layer layer1"></div>
@@ -216,7 +216,9 @@
 
         /*---------------Script for the image slider---------------*/
 
-        var responsiveSlider = function() {
+        responsiveSlider()
+
+        function responsiveSlider() {
 
         var slider = document.getElementById("slider");
         var sliderWidth = slider.offsetWidth;
@@ -255,8 +257,15 @@
         }
         };
 
-        setInterval(function() {nextSlide()}, 8000);
+        next.addEventListener("click", function() {
+            nextSlide();
+        });
 
+        prev.addEventListener("click", function() {
+            prevSlide();
+        });
+
+        setInterval(nextSlide, 8000);
         }
 
     </script>

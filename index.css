@@ -16,6 +16,7 @@ body {
     top: 0;
     left: 0;
     background: rgb(23, 61, 23, 0.8);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
@@ -179,6 +180,7 @@ nav ul li a:hover::after, .selection:hover::after {
 }
 
 header {
+    position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -192,7 +194,7 @@ header #prev, header #next {
     color: white;
     text-decoration: none;
     position: absolute;
-    top: 50%;
+    top: 45%;
     border-radius: 50%;
     font-size: 2vw;
     transition: all 0.5s ease;
@@ -228,33 +230,26 @@ header #prev:hover, header #next:hover {
     list-style: none;
 }
 
-.slider-page:nth-child(1) {
-    background: url(Images/headeru3.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.slider-page:nth-child(2) {
-    background: url(Images/header4.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.slider-page:nth-child(3) {
-    background: url(Images/header5.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+.slider-page img {
+    width: 100vw;
+    height: 100%;
 }
 
 .theshadow {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
+    -webkit-backdrop-filter: brightness(60%);
     backdrop-filter: brightness(60%);
 }
 
 #header-text {
+    top: 35%;
+    left: 0.5vw;
     display: flex;
     flex-direction: column;
     margin-left: 100px;
@@ -306,6 +301,7 @@ header #prev:hover, header #next:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    -webkit-backdrop-filter: brightness(60%);
     backdrop-filter: brightness(60%);
 }
 
@@ -313,6 +309,17 @@ header #prev:hover, header #next:hover {
     color: white;
     font-size: 100px;
     padding-top: 80px;
+    position: relative;
+}
+
+.row-topic::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    background: white;
 }
 
 .row-texts-a {
@@ -395,6 +402,7 @@ header #prev:hover, header #next:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
 
@@ -549,12 +557,14 @@ header #prev:hover, header #next:hover {
 
     .the-row-shadow {
         position: static;
+        -webkit-backdrop-filter: brightness(50%);
         backdrop-filter: brightness(50%);
     }
 
     .text-box {
         width: 100%;
         background: #262626;
+        -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
     }
 
