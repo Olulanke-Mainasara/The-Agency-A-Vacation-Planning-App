@@ -244,16 +244,15 @@ header #prev:hover, header #next:hover {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     -webkit-backdrop-filter: brightness(60%);
     backdrop-filter: brightness(60%);
 }
 
 #header-text {
-    top: 35%;
-    left: 0.5vw;
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
+    text-align: center;
 }
 
 #header-text h1 {
@@ -265,6 +264,7 @@ header #prev:hover, header #next:hover {
 #header-text a {
     font-size: 2vw;
     text-decoration: none;
+    margin: auto;
     padding: 2.5vh;
     width: 30vw;
     text-align: center;
