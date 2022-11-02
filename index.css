@@ -73,6 +73,7 @@ body {
     height: 100vh;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 nav {
@@ -273,19 +274,19 @@ header #prev:hover, header #next:hover {
     transition: color 0.5s, background 0.5s;
 }
 
-#header-text a:hover {
+#header-text a:hover, .text-text a:hover {
     background: rgb(23, 61, 23);
     color: white;
 }
 
-#row-1, #row-2, #row-3, #row-4 {
+#row-1, #row-2, #row-3, #row-4, #row-5 {
     width: 100vw;
     height: 100vh;
     position: relative;
     scroll-snap-align: start;
 }
 
-.the-row-shadow, #the-review-shadow {
+.the-row-shadow, #the-review-shadow, #the-contact-shadow {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -313,36 +314,59 @@ header #prev:hover, header #next:hover {
     position: absolute;
     bottom: -6px;
     left: 0;
-    background: white;
+    background: rgb(23, 61, 23);
 }
 
 .row-texts-a {
     display: flex;
-    flex-wrap: wrap;
-    padding: 60px 11vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-box-a {
+    height: 100%;
+    flex-basis: 55%;
 }
 
 .text-img {
-    width: 400px;
-    height: 600px;
+    height: 100%;
+    width: 80%;
     margin: auto;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 30px;
-    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+        'myTop myTop'
+        'myLeft myRight'
+    ;
+    grid-gap: 30px;
 }
 
-.text-img img {
+#Grid-top {
     width: 100%;
-    height: 100%;
+    height: 300px;
+    grid-area: myTop;
+    border-radius: 15px;
+}
+
+#Grid-bottom-left, #Grid-bottom-right {
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+#Grid-bottom-left {
+    grid-area: myLeft;
+}
+
+#Grid-bottom-right {
+    grid-area: myRight;
 }
 
 .text-box-a {
-    color: white;
-    padding: 30px;
-    width: 50%;
-    background: none;
-    border: none;
-    margin: auto;
+    flex-basis: 45%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .text-box-a h1 {
@@ -351,6 +375,28 @@ header #prev:hover, header #next:hover {
 
 .text-box-a p {
     font-size: 20px;
+}
+
+.text-text {
+    width: 90%;
+    color: white;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.text-text a {
+    width: 200px;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(23, 61, 23);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
 }
 
 .row-texts-b {
@@ -363,17 +409,37 @@ header #prev:hover, header #next:hover {
 .text-box {
     color: white;
     padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid white;
     border-radius: 30px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    background: #262626;
     width: 90%;
     margin: auto;
 }
 
 .text-box h1 {
+    color: white;
     font-size: 45px;
+}
+
+#direct-1, #direct-2, #direct-3 {
+    padding: 12px 15px;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: background 0.5s;
+    cursor: pointer;
+}
+
+#direct-1:hover, #direct-2:hover, #direct-3:hover {
+    background: white;
+}
+
+.text-box i {
+    font-size: 50px;
+    color: rgb(23, 61, 23);
 }
 
 .row-texts-c {
@@ -388,7 +454,7 @@ header #prev:hover, header #next:hover {
 .circle {
     width: 500px;
     height: 500px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
     border-radius: 50%;
 }
 
@@ -396,7 +462,7 @@ header #prev:hover, header #next:hover {
     position: absolute;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.5);
+    background: white;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
@@ -414,6 +480,7 @@ header #prev:hover, header #next:hover {
     width: 270px;
     height: 130px;
 }
+
 #the-review-shadow {
     align-items: flex-start;
     gap: 60px;
@@ -425,7 +492,7 @@ header #prev:hover, header #next:hover {
 
 #review-slider {
     width: 10000%;
-    padding: 30px;
+    padding: 30px 70px;
     display: flex;
     gap: 50px;
     overflow: scroll;
@@ -440,7 +507,7 @@ header #prev:hover, header #next:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
     border-radius: 30px;
     gap: 20px;
     color: white;
@@ -456,6 +523,144 @@ header #prev:hover, header #next:hover {
     font-size: 29px;
 }
 
+.comments i {
+    color: rgb(23, 61, 23);
+    font-size: 30px;
+}
+
+#the-contact-shadow {
+    flex-direction: row;
+}
+
+.contact-left {
+    flex-basis: 45%;
+}
+
+.contact-right {
+    flex-basis: 45%;
+}
+
+.contact-left h1 span {
+    color: rgb(23, 61, 23);
+}
+
+.contact-left p {
+    color: white;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: rgb(23, 61, 23);
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s, color 0.5s;
+}
+
+.social-icons a:hover {
+    color: rgb(23, 61, 23);
+    transform: translateY(-5px);
+}
+
+#news-subscribe {
+    margin-top: 40px;
+    color: white;
+}
+
+#subscribe-call {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+#subscribe-call span {
+    color: rgb(23, 61, 23);
+    font-weight: 600;
+}
+
+#news-subscribe input {
+    width: 400px;
+}
+
+.sub-btn {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid rgb(23, 61, 23);
+    font-size: 18px;
+    padding: 14px 60px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgb(23, 61, 23);
+    background: white;
+    transition: background 0.5s;
+}
+
+.sub-btn:hover {
+    background: rgb(23, 61, 23);
+    cursor: pointer;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px; 
+}
+
+#cv i, #send i {
+    color: rgb(23, 61, 23);
+    font-size: 20px;
+    transition: color 0.5s;
+}
+
+#cv:hover i, #send:hover i {
+    color: white;
+}
+
+#moveu {
+    margin: 25px 0;
+    display: block;
+    font-size: 40px;
+    color: #ff004f;
+    width: fit-content;
+}
+
+#moveu:hover {
+    color: white;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.copyright i {
+    color: #ff004f;
+}
 
 /*-------------------------------------Mobile Responsiveness (Ultra-wide screens)------------------------------------*/
 
