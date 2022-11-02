@@ -505,14 +505,13 @@ header {
 #review-slider {
     padding: 20px 70px 70px 70px;
     display: flex;
-    gap: 50px;
     overflow-x: scroll;
 }
 
 .comments {
     width: 300px;
     height: 405px;
-    padding: 30px 20px;
+    padding: 0 20px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -520,7 +519,7 @@ header {
     flex-direction: column;
     border: 1px solid white;
     border-radius: 30px;
-    gap: 20px;
+    gap: 25px;
     color: white;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     opacity: 0.1;

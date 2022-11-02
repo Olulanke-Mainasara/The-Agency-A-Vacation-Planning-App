@@ -47,6 +47,8 @@ function closemenu() {
 new Glide(".heroGlide", {
     type: "carousel",
     perView: 1,
+    autoplay: 6000,
+    animationDuration: 2000,
 }).mount();
 
 
@@ -57,5 +59,7 @@ new Glide(".glide", {
     type: "carousel",
     autoplay: 5000,
     perView: 4,
-    focusAt: 'center'
+    gap: 50,
+    focusAt: 'center',
+    animationDuration: 1000,
 }).mount();
