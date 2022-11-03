@@ -188,15 +188,17 @@ header {
 }
 
 .prev, .next {
-    width: 50px;
+    width: 65px;
     line-height: 50px;
     text-align: center;
     color: white;
+    background: none;
     text-decoration: none;
     position: absolute;
-    top: 45%;
+    top: 50%;
     border: none;
     border-radius: 50%;
+    padding: 5px 5px;
     font-size: 2vw;
     transition: all 0.5s ease;
 }
@@ -236,7 +238,7 @@ header {
     align-items: center;
     justify-content: center;
     -webkit-backdrop-filter: brightness(60%);
-    backdrop-filter: brightness(60%);
+    backdrop-filter: brightness(40%);
 }
 
 #header-text {
@@ -619,10 +621,11 @@ header {
     text-decoration: none;
     color: rgb(23, 61, 23);
     background: white;
-    transition: background 0.5s;
+    transition: background 0.5s, color 0.5s;
 }
 
 .sub-btn:hover {
+    color: white;
     background: rgb(23, 61, 23);
     cursor: pointer;
 }
