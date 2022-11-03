@@ -64,6 +64,7 @@ new Glide(".glide", {
         before: 100,
         after: 100
     },
+    hoverpause: false,
     gap: 50,
     focusAt: 'center',
     animationDuration: 1000,
