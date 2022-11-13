@@ -60,12 +60,16 @@ new Glide(".glide", {
     type: "carousel",
     autoplay: 5000,
     perView: 4,
-    peak: {
-        before: 100,
-        after: 100
-    },
+    gap: 0,
     hoverpause: false,
-    gap: 50,
     focusAt: 'center',
     animationDuration: 1000,
+    breakpoints: {
+        1302: {
+            perView: 2
+        },
+        600: {
+            perView: 1,
+        }
+    },
 }).mount();

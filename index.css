@@ -308,8 +308,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    -webkit-backdrop-filter: brightness(60%);
-    backdrop-filter: brightness(60%);
+    -webkit-backdrop-filter: brightness(50%);
+    backdrop-filter: brightness(50%);
 }
 
 .row-topic {
@@ -409,7 +409,7 @@ header {
     color: rgb(23, 61, 23);
     background: white;
     padding: 15px 20px;
-    border-radius: 30px;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     transition: background 0.5s, color 0.5s;
@@ -469,6 +469,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.mobile-the-process {
+    display: none;
 }
 
 .circle {
@@ -532,8 +536,9 @@ header {
 }
 
 #review-slider {
-    padding: 20px 70px 70px 70px;
+    padding: 30px 70px 70px 70px;
     display: flex;
+    gap: 50px;
     overflow-x: hidden;
 }
 
@@ -546,13 +551,22 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 25px;
     border: 1px solid white;
     border-radius: 30px;
-    gap: 25px;
     color: white;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     opacity: 0.1;
     transition: opacity 0.5s, transform 0.5s;
+}
+
+.inner-comments {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .comments[class*=active] {
@@ -589,6 +603,10 @@ header {
 
 .contact-left h1 span {
     color: rgb(23, 61, 23);
+}
+
+.contact-left .row-topic {
+    padding-top: 0;
 }
 
 .contact-left p {
@@ -636,17 +654,24 @@ header {
     font-weight: 600;
 }
 
+#news-subscribe form {
+    display: flex;
+    flex-direction: column;
+}
+
 #news-subscribe input {
     width: 400px;
 }
 
 .sub-btn {
+    width: fit-content;
     display: inline-block;
     margin-top: 20px;
     border: 1px solid rgb(23, 61, 23);
     font-size: 18px;
+    font-weight: 500;
     padding: 14px 60px;
-    border-radius: 6px;
+    border-radius: 10px;
     text-decoration: none;
     color: rgb(23, 61, 23);
     background: white;
@@ -714,12 +739,6 @@ form input, form textarea {
 
 /*------------------------------Mobile Responsiveness (Ultra-wide screens)------------------------------*/
 
-@media screen and (max-width: 8000px) {
-    #header-text {
-        width: 80%;
-    }
-}
-
 @media screen and (min-width: 5000px) {
     #header-text {
         margin-left: 180px;
@@ -737,17 +756,7 @@ form input, form textarea {
 
 /*-------------------------------------Mobile Responsiveness (Ipads)------------------------------------*/
 
-@media screen and (min-width: 1111px) and (max-width: 1302px) {
-    #header-text {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 1110px) {
-    body {
-        background: rgb(23, 61, 23);
-    }
-
+@media screen and (max-width: 1302px) {
     #alphacontainer {
         scroll-snap-type: none;
         overflow-y: none;
@@ -803,75 +812,110 @@ form input, form textarea {
 
     #logselect {
         margin-top: 10px;
+        opacity: 1;
     }
 
     #header-text {
-        width: 95%;
-        margin-left: 140px;
+        width: 100%;
     }
 
-    #header-text h1 {
-        font-size: 85px;
+    .breaks {
+        display: none;
     }
 
     #header-text a {
         font-size: 25px;
-        border-radius: 45px;
     }
 
-    header #prev, header #next {
-        font-size: 2rem;
+    .prev, .next {
+        font-size: 5vw;
     }
 
-    header #prev:hover, header #next:hover {
+    header .prev:hover, header .next:hover, #row-4 .prev, #row-4 .next {
         background-color: none;
     }
 
-    #row-1 {
-        height: 100%;
-        background: url(Images/Row-img/rowimg2.png);
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    
-    #row-2 {
-        height: 100%;
-        background: url(Images/Row-img/rowimg5.jpeg);
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    .video {
-        display: none;
-    }
-
-    .the-row-shadow {
+    .the-row-shadow, #the-review-shadow, #the-contact-shadow {
         position: static;
-        -webkit-backdrop-filter: brightness(50%);
-        backdrop-filter: brightness(50%);
     }
 
-    .text-box {
-        width: 100%;
-        background: #262626;
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
+    #row-1, #row-2, #row-3, #row-4, #row-5 {
+        height: 100%;
     }
 
     .row-texts-a {
         flex-direction: column;
+        gap: 50px;
     }
 
     .text-box-a {
-        width: auto;
+        flex-basis: 100%;
+        margin-bottom: 80px;
     }
 
     .text-img {
-        margin: 30px auto;
+        margin: 80px auto 0;
     }
 
-    .text-box-a p {
-        font-size: 25px;
+    .text-box {
+        width: 100%;
+    }
+
+    .text-text {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 0;
+    }
+
+    .text-text a {
+        font-size: 20px;
+    }
+
+    .text-box h1 {
+        font-size: 42px;
+    }
+
+    #the-process-shadow {
+        padding: 80px 0 0;
+    }
+
+    #the-review-shadow {
+        padding: 100px 0;
+    }
+
+    .review {
+        padding: 0;
+    }
+
+    #the-contact-shadow {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-left {
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .contact-left-content {
+        width: 80%;
+        margin: auto;
+    }
+
+    .contact-right-content {
+        width: 80%;
+        margin: auto;
+    }
+
+    .contact-right {
+        margin-bottom: 70px;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1302) {
+    .contact-left-content {
+        width: 50vw;
+        margin: auto;
     }
 }
 
@@ -880,53 +924,136 @@ form input, form textarea {
 @media screen and (max-width: 600px) {
     nav {
         padding: 10px 10px;
-    }
+    }        
 
-    #header-text {
-        margin-left: 50px;
+    header .prev, #row-4 .prev {
+        left: 0px;
     }
-
-    #header-text h1 {
-        font-size: 60px;
+    
+    header .next, #row-4 .next {
+        right: 0px;
     }
 
     #header-text a {
         font-size: 15px;
-        width: 150px;
+        padding: 15px;
     }
 
-    header #prev {
-        left: 0px;
-    }
-    
-    header #next {
-        right: 0px;
+    #Grid-bottom-left, #Grid-bottom-right {
+        display: none;
     }
 
-    .selection {
-        opacity: 0;
-    }
-
-    .row-topic {
-        font-size: 60px;
+    .row-texts-a {
+        gap: 10px;
     }
 
     .text-img {
-        width: 350px;
+        width: 80%;
+    }
+
+    .text-box-a {
+        width: 100%;
+    }
+
+    .text-box-a h1 {
+        font-size: 30px;
     }
 
     .text-box-a p {
         font-size: 15px;
+    }
+
+    .row-topic {
+        font-size: 55px;
+    }
+
+    .row-texts-b {
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        margin-bottom: 60px;
+    }
+
+    .text-box {
+        width: 100%;
+    }
+
+    .text-box h1 {
+        font-size: 37px;
+    }
+
+    #row-3 {
+        height: 100%;
+    }
+
+    .row-texts-c {
+        display: none;
+    }
+
+    .mobile-the-process {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        margin: 80px 0;
+    }
+
+    .mobile-the-process .circle-point {
+        position: static;
+    }
+
+    .the-process-topic {
+        color: white;
+        font-size: 50px;
+    }
+
+    #review-slider {
+        gap: 0;
+        padding: 20px 0 70px 0;
+    }
+
+    .comments {
+        padding: 0;
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .inner-comments {
+        width: 300px;
+        height: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        border: 1px solid white;
+        border-radius: 30px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .comments[class*=active] {
+        transform: scale(1.1);
+    }
+
+    .comments[class*=active] .inner-comments {
+        opacity: 1;
+    }
+
+    #row-4 .prev, #row-4 .next {
+        width: 40px;
+        padding: 5px;
+        top: 45%;
+    }
+
+    #news-subscribe input {
+        width: 100%;
     }
 }
 
 /*-------------------------------------Mobile Responsiveness (Small phones)------------------------------------*/
 
 @media screen and (max-width: 330px) {
-    #header-text {
-        margin-left: 45px;
-    }
-
     #header-text h1 {
         font-size: 40px;
     }
